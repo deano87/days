@@ -58,7 +58,7 @@ func (ps PresentList) GetTotalWrapperDimensions() int {
 
 // GetTotalRobbonLength sums up all of the presents ribbon lengths
 // that were calculated by GetRibbonLength
-func (ps PresentList) GetTotalRobbonLength() int {
+func (ps PresentList) GetTotalRibbonLength() int {
 	sum := 0
 	for _, p := range ps {
 		sum += p.GetRibbonLength()
@@ -69,7 +69,7 @@ func (ps PresentList) GetTotalRobbonLength() int {
 func main() {
 	presents := parseInput(getInput())
 	fmt.Printf("Total wrapper dimensions: %d\n", presents.GetTotalWrapperDimensions())
-	fmt.Printf("Total ribbon length: %d\n", presents.GetTotalRobbonLength())
+	fmt.Printf("Total ribbon length: %d\n", presents.GetTotalRibbonLength())
 }
 
 // parseInput Builds the PresentList from the given input
