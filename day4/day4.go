@@ -32,19 +32,15 @@ func HashMd5(s string) string {
 // mining term functions
 
 func termFiveZeros(s string) bool {
-	for j := 0; j < 5 && j < len(s); j++ {
-		if s[j] != '0' {
-			return false
-		}
+	if s[:5] == "00000" {
+		return true
 	}
-	return true
+	return false
 }
 
 func termSixZeros(s string) bool {
-	for j := 0; j < 6 && j < len(s); j++ {
-		if s[j] != '0' {
-			return false
-		}
+	if s[:6] == "000000" {
+		return true
 	}
-	return true
+	return false
 }
