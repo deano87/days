@@ -15,14 +15,14 @@ var testList = struct {
 	expectedRibbonLength:      11,
 }
 
-// Test wrapping paper calculation
+// TestWrappingDimensions tests wrapping paper calculation
 func TestWrappingDimensions(t *testing.T) {
 	if testList.presents.GetTotalWrapperDimensions() != testList.expectedWrapperDimensions {
 		t.Error("Total wrapping dimensions don't match the expected result")
 	}
 }
 
-// Test ribbon length calculation
+// TestRibbonLength tests ribbon length calculation
 func TestRibbonLength(t *testing.T) {
 	if testList.presents.GetTotalRibbonLength() != testList.expectedRibbonLength {
 		t.Error("Total ribbon length doesn't match the expected result")
