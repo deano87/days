@@ -7,16 +7,12 @@ var deliveryList = []struct {
 	ExpectedResult int
 }{
 	{
-		Input:          ">",
-		ExpectedResult: 2,
-	},
-	{
-		Input:          "^>v<",
-		ExpectedResult: 4,
+		Input:          "^v",
+		ExpectedResult: 3,
 	},
 	{
 		Input:          "^v^v^v^v^v",
-		ExpectedResult: 2,
+		ExpectedResult: 11,
 	},
 }
 

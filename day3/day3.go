@@ -36,12 +36,17 @@ func HandleDelivery(h *Houses, p *Pointer, fn func(x int, y int) (int, int)) int
 
 // ParseElfInstructions parses the given string and calls the delivery function
 func ParseElfInstructions(s string) int {
-	var pointer = &Pointer{X: 0, Y: 0, Counter: 1}
+	var santaPointer = &Pointer{X: 0, Y: 0, Counter: 1}
+	var robotPointer = &Pointer{X: 0, Y: 0, Counter: 0}
 	var houses = &Houses{0: {0: 1}} // first house always gets a present
 
 	fmt.Printf("Starting with string: %s\n", s)
 
 	for i := 0; i < len(s); i++ {
+		var pointer = santaPointer
+		if i%2 == 0 {
+			pointer = robotPointer
+		}
 		switch s[i] {
 		case '^':
 			HandleDelivery(houses, pointer, moveNorth)
@@ -53,7 +58,9 @@ func ParseElfInstructions(s string) int {
 			HandleDelivery(houses, pointer, moveWest)
 		}
 	}
-	return pointer.Counter
+
+	// return how many houses the robot & santa visited
+	return santaPointer.Counter + robotPointer.Counter
 }
 
 // Move functions
