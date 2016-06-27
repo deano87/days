@@ -56,7 +56,7 @@ func (ps PresentList) GetTotalWrapperDimensions() int {
 	return sum
 }
 
-// GetTotalRobbonLength sums up all of the presents ribbon lengths
+// GetTotalRibbonLength sums up all of the presents ribbon lengths
 // that were calculated by GetRibbonLength
 func (ps PresentList) GetTotalRibbonLength() int {
 	sum := 0
